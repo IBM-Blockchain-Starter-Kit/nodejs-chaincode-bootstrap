@@ -1,0 +1,14 @@
+{
+    "org1": {
+        "chaincode": [
+            {
+                "name": "chaincode",
+                "path": "lib/chaincode",
+                "channels": [ "defaultchannel" ],
+                "init_args": [],
+                "instantiate": "true",
+                "install": true 
+            }
+        ]
+    }
+}
