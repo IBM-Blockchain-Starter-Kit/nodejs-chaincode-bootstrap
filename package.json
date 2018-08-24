@@ -9,6 +9,7 @@
     "scripts": {
         "lint": "eslint .",
         "pretest": "npm run lint",
+        "build": "echo \"No build specified\" && exit 0",
         "test": "nyc mocha --recursive",
         "start": "node lib/start.js"
     },
