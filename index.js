@@ -17,4 +17,7 @@
 
 'use strict';
 
-module.exports = require('./lib/chaincode');
+const MyContract = require('./lib/my-contract');
+
+module.exports.MyContract = MyContract;
+module.exports.contracts = [ MyContract ];
