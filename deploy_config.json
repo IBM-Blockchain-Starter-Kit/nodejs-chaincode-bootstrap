@@ -2,8 +2,8 @@
     "org1": {
         "chaincode": [
             {
-                "name": "chaincode",
-                "path": "lib/chaincode",
+                "name": "MyContract",
+                "path": "lib/my-contract",
                 "channels": [ "defaultchannel" ],
                 "init_args": [],
                 "instantiate": "true",
