@@ -15,9 +15,12 @@
  * limitations under the License.
  */
 
-'use strict';
+import { Object, Property } from 'fabric-contract-api';
 
-const MyContract = require('./lib/my-contract');
+@Object()
+export class MyAsset {
 
-module.exports.MyContract = MyContract;
-module.exports.contracts = [ MyContract ];
+    @Property()
+    public value: string;
+
+}

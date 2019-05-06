@@ -1,0 +1,7 @@
+language: node_js
+node_js:
+  - "8.11.4"
+
+script:
+  - echo Testing typescript chaincode project
+  - npm run test
