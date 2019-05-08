@@ -2,8 +2,8 @@
     "org1": {
         "chaincode": [
             {
-                "name": "MyContract",
-                "path": "lib/my-contract",
+                "name": "MyAssetContract",
+                "path": "dist/index.js",
                 "channels": [ "defaultchannel" ],
                 "init_args": [],
                 "instantiate": "true",

@@ -1,44 +1,71 @@
 {
     "name": "mycontract",
     "version": "0.0.1",
-    "description": "My Contract",
-    "main": "index.js",
+    "description": "My Asset Contract",
+    "main": "dist/index.js",
+    "typings": "dist/index.d.ts",
     "engines": {
         "node": ">=8",
         "npm": ">=5"
     },
     "scripts": {
-        "lint": "eslint .",
+        "lint": "tslint -c tslint.json 'src/**/*.ts'",
         "pretest": "npm run lint",
-        "build": "echo \"No build specified\" && exit 0",
-        "test": "nyc mocha --recursive",
+        "test": "nyc mocha src/**/*.spec.ts",
+        "build": "tsc",
+        "build:watch": "tsc -w",
         "start": "fabric-chaincode-node start"
     },
     "engineStrict": true,
     "author": "IBM",
     "license": "Apache-2.0",
     "dependencies": {
-        "fabric-contract-api": "1.4.0",
-        "fabric-shim": "1.4.0"
+        "fabric-contract-api": "1.4.1",
+        "fabric-shim": "1.4.1"
     },
     "devDependencies": {
+        "@types/chai": "^4.1.7",
+        "@types/chai-as-promised": "^7.1.0",
+        "@types/mocha": "^5.2.5",
+        "@types/node": "^10.12.10",
+        "@types/sinon": "^5.0.7",
+        "@types/sinon-chai": "^3.2.1",
         "chai": "^4.2.0",
         "chai-as-promised": "^7.1.1",
-        "eslint": "^5.9.0",
         "mocha": "^5.2.0",
-        "nyc": "^13.1.0",
+        "nyc": "^14.0.0",
         "sinon": "^7.1.1",
-        "sinon-chai": "^3.3.0"
+        "sinon-chai": "^3.3.0",
+        "winston": "^3.2.1",
+        "ts-node": "^7.0.1",
+        "tslint": "^5.11.0",
+        "typescript": "^3.1.6"
     },
     "nyc": {
+        "include": [
+            "src/**/*.ts",
+            "src/**/*.tsx"
+        ],
+        "extension": [
+            ".ts",
+            ".tsx"
+        ],
         "exclude": [
             "coverage/**",
             "test/**"
         ],
-        "reporter": [
-            "text-summary",
-            "html"
+        "require": [
+            "ts-node/register"
         ],
+        "reporter": [
+            "lcov",
+            "json",
+            "text",
+            "text-summary",
+            "cobertura"
+        ],
+        "sourceMap": true,
+        "instrument": true,
         "all": true,
         "check-coverage": true,
         "statements": 100,
