@@ -5,3 +5,4 @@ node_js:
 script:
   - echo Testing typescript chaincode project
   - npm run test
+  - npm run build
