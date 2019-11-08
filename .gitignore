@@ -79,3 +79,5 @@ typings/
 # Compiled TypeScript files
 dist
 
+# OSX
+**/.DS_Store
