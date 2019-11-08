@@ -1,14 +1,15 @@
 {
-    "org1": {
-        "chaincode": [
-            {
-                "name": "MyAssetContract",
-                "path": "dist/index.js",
-                "channels": [ "defaultchannel" ],
-                "init_args": [],
-                "instantiate": "true",
-                "install": true 
-            }
-        ]
-    }
+  "Org1MSP": {
+    "chaincode": [
+      {
+        "name": "MyAssetContract",
+        "path": "dist/index.js",
+        "channels": [
+          "defaultchannel"
+        ],
+        "instantiate": true,
+        "install": true
+      }
+    ]
+  }
 }
