@@ -54,7 +54,7 @@ describe('MyAssetContract', () => {
 
       it('should ping successfully', async () => {
           const result = await contract.ping(ctx);
-          result.should.equal('Ping to chaincode successful');
+          result.should.equal('Ok');
       });
 
     });
@@ -117,7 +117,8 @@ describe('MyAssetContract', () => {
     describe('#deleteMyAsset', () => {
 
         it('should delete a my asset', async () => {
-            await contract.deleteMyAsset(ctx, '1001');
+            const result = await contract.deleteMyAsset(ctx, '1001');
+            result.should.equal('1001');
             ctx.stub.deleteState.should.have.been.calledOnceWithExactly('1001');
         });
 
