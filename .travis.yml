@@ -1,6 +1,6 @@
 language: node_js
 node_js:
-  - "8.11.4"
+  - "8.16.2"
 
 script:
   - echo Testing typescript chaincode project

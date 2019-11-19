@@ -28,7 +28,8 @@ export class MyAssetContract extends Contract {
     @Returns('string')
     public async ping(ctx: Context): Promise<string> {
         logger.debug('entering >>> ping');
-        return 'Ping to chaincode successful';
+        logger.debug('Ping to chaincode successful');
+        return 'Ok';
     }
 
     @Transaction(false)
@@ -88,7 +89,7 @@ export class MyAssetContract extends Contract {
     }
 
     @Transaction()
-    public async deleteMyAsset(ctx: Context, myAssetId: string): Promise<void> {
+    public async deleteMyAsset(ctx: Context, myAssetId: string): Promise<string> {
         logger.debug('entering >>> deleteMyAsset');
 
         const exists = await this.myAssetExists(ctx, myAssetId);
@@ -97,6 +98,7 @@ export class MyAssetContract extends Contract {
             throw new Error(`The my asset ${myAssetId} does not exist`);
         }
         await ctx.stub.deleteState(myAssetId);
+        return myAssetId;
     }
 
 }

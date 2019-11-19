@@ -2,7 +2,7 @@
   "Org1MSP": {
     "chaincode": [
       {
-        "name": "MyAssetContract",
+        "name": "mycontract",
         "path": "dist/index.js",
         "channels": [
           "defaultchannel"
