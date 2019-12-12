@@ -3,7 +3,7 @@
     "chaincode": [
       {
         "name": "mycontract",
-        "path": "dist/index.js",
+        "path": ".",
         "channels": [
           "defaultchannel"
         ],
