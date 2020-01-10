@@ -2,10 +2,10 @@
   "Org1MSP": {
     "chaincode": [
       {
-        "name": "mycontract",
+        "name": "devops-demo",
         "path": ".",
         "channels": [
-          "defaultchannel"
+          "mychannel1"
         ],
         "instantiate": true,
         "install": true
@@ -13,3 +13,4 @@
     ]
   }
 }
+
