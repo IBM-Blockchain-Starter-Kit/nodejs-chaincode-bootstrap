@@ -3,9 +3,9 @@
     "chaincode": [
       {
         "name": "mycontract",
-        "path": ".",
+        "path": "chaincode/asset",
         "channels": [
-          "defaultchannel"
+          "mychannel"
         ],
         "instantiate": true,
         "install": true
@@ -13,3 +13,4 @@
     ]
   }
 }
+
