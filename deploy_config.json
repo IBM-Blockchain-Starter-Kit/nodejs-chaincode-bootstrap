@@ -3,7 +3,7 @@
     "chaincode": [
       {
         "name": "devops-demo",
-        "path": ".",
+        "path": "chaincode/asset",
         "channels": [
           "mychannel1"
         ],
