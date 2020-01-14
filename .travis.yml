@@ -5,5 +5,6 @@ node_js:
 script:
   - echo Testing typescript chaincode project
   - cd chaincode/asset
+  - npm install
   - npm run test
   - npm run build
