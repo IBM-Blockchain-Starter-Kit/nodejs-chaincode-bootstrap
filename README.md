@@ -59,6 +59,19 @@ The simple structure of this file allows you to specify the following informatio
   * `channels`: Comma separated string array containing the names of the channels where the smart contracts should be instantiated.
   * `instantiate`: Boolean indicating if the smart contract should be instantiated after installation.
   * `install`: Boolean indicating if the smart contract should be installed or not.
+  * `collections_config`: Configuration file path relative to the chaincode directory.  This file dictates the name and the path of the Private Data Collection configuration e.g.
+  ```
+  {    
+    "Org1MSP": {
+        "chaincode": [
+            {
+              ...,
+              "collections_config": "<relative path to the PDC configuration file>"
+            }
+        ]
+     }
+  }
+  ```
 
 ## Environment
 
