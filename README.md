@@ -66,7 +66,7 @@ The simple structure of this file allows you to specify the following informatio
         "chaincode": [
             {
               ...,
-              "collections_config": "<relative path to the PDC configuration file>"
+              "collections_config": "<PDC configuration file path>"
             }
         ]
      }
