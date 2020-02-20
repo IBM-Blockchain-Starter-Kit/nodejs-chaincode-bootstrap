@@ -18,7 +18,7 @@ Notice that the purpose of this structure is to allow for the definition of mult
 
 When integrated with the Blockchain Automation Toolchain, the metadata specified in the [deployment configuration](deploy_config.json) file is used to indicate the smart contracts that must be deployed, the Hyperledger Fabric organizations that the smart contracts should be applied to and the channels where each smart contract should be instantiated.  
 
-The sample [deployment configuration](deploy_config.json) file provided in this project is as follows: 
+The sample [deployment configuration](deploy_config.json) file provided in this project is as follows:
 
 ```
 {
@@ -31,7 +31,11 @@ The sample [deployment configuration](deploy_config.json) file provided in this 
           "mychannel"
         ],
         "instantiate": true,
-        "install": true
+        "install": true,
+        "collections_config": "chaincode/asset/collections-config.json",
+        "init_fn": "mycontract:method",
+        "init_args": ["a","20"],
+        "endorsement_policy": "{\"identities\":[{\"role\":{\"name\":\"member\",\"mspId\":\"Org1MSP\"}},{\"role\":{\"name\":\"member\",\"mspId\":\"Org2MSP\"}}],\"policy\":{\"1-of\":[{\"signed-by\":0},{\"signed-by\":1}]}}"
       }
     ]
   }
@@ -59,6 +63,11 @@ The simple structure of this file allows you to specify the following informatio
   * `channels`: Comma separated string array containing the names of the channels where the smart contracts should be instantiated.
   * `instantiate`: Boolean indicating if the smart contract should be instantiated after installation.
   * `install`: Boolean indicating if the smart contract should be installed or not.
+  * `collections_config`: (Optional) Configuration file path relative to the chaincode directory.  This file dictates the name and the path of the Private Data Collection configuration.
+  * `endorsement_policy`: (Optional) Custom endorsement policy that instructs a peer on how to decide whether a transaction is properly endorsed.
+  * `init_fn`: (Optional) Method to be called when the chaincode is instantiated.
+  * `init_args`: (Optional) Parameters required for the 'init_fn'.
+
 
 ## Environment
 
